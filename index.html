@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rubik Trainer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Rubik Trainer</h1>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#f2l" data-tab="f2l">F2L</a>
+      <a href="#oll" data-tab="oll">OLL</a>
+      <a href="#pll" data-tab="pll">PLL</a>
+    </nav>
+  </header>
+
+  <!-- ================= F2L ================= -->
+  <div id="tab-f2l" class="tab" hidden>
+    <p class="sub">Find your case in the list below and watch how to insert the pair into the front-right slot.</p>
+    <main class="layout">
+      <section class="panel">
+        <div id="f2l-result" class="result"></div>
+        <div class="practice">
+          <div class="panel-head">
+            <h2>Practice</h2>
+            <button id="f2l-random" class="btn primary" type="button">Random case</button>
+          </div>
+          <p class="hint">Get a random case with the algorithm hidden. Choose which groups to include.</p>
+          <div id="f2l-groups" class="chips"></div>
+        </div>
+      </section>
+
+      <section class="panel result-panel">
+        <div id="f2l-player"></div>
+      </section>
+    </main>
+
+    <section class="panel gallery-panel">
+      <div class="panel-head">
+        <h2>All 41 cases</h2>
+      </div>
+      <p class="hint">Yellow on top, target slot at front-right. Click a case to load it.</p>
+      <div id="f2l-gallery" class="gallery wide"></div>
+    </section>
+    <footer class="foot">Drag the 3D cube to look around.</footer>
+  </div>
+
+  <!-- ================= OLL ================= -->
+  <div id="tab-oll" class="tab" hidden>
+    <p class="sub">Tap the stickers that are yellow on your cube. The matching algorithm appears instantly.</p>
+    <main class="layout">
+      <section class="panel picker-panel">
+        <div class="panel-head">
+          <h2>Your last layer</h2>
+          <button id="oll-clear" class="btn ghost" type="button">Clear</button>
+        </div>
+        <p class="hint">Hold the cube with yellow on top. The bottom edge of this grid is the side facing you.</p>
+        <div id="oll-picker" class="picker" aria-label="Last layer sticker picker"></div>
+        <div class="facing">&#8595; front (facing you)</div>
+        <div id="oll-status" class="status" aria-live="polite"></div>
+      </section>
+
+      <section class="panel result-panel">
+        <div id="oll-result" class="result"></div>
+        <div id="oll-player"></div>
+      </section>
+    </main>
+
+    <section class="panel gallery-panel">
+      <div class="panel-head">
+        <h2>All 57 cases</h2>
+        <span id="oll-gallery-count" class="muted"></span>
+      </div>
+      <p class="hint">Cases that still fit your input stay highlighted. Click any case to load it.</p>
+      <div id="oll-gallery" class="gallery"></div>
+    </section>
+    <footer class="foot">Drag the 3D cube to look around.</footer>
+  </div>
+
+  <!-- ================= PLL ================= -->
+  <div id="tab-pll" class="tab" hidden>
+    <p class="sub">Find your case in the list below and watch how to permute the last layer.</p>
+    <main class="layout">
+      <section class="panel">
+        <div id="pll-result" class="result"></div>
+        <div class="practice">
+          <div class="panel-head">
+            <h2>Practice</h2>
+            <button id="pll-random" class="btn primary" type="button">Random case</button>
+          </div>
+          <p class="hint">Get a random case with the algorithm hidden. Choose which groups to include.</p>
+          <div id="pll-groups" class="chips"></div>
+        </div>
+      </section>
+
+      <section class="panel result-panel">
+        <div id="pll-player"></div>
+      </section>
+    </main>
+
+    <section class="panel gallery-panel">
+      <div class="panel-head">
+        <h2>All 21 cases</h2>
+      </div>
+      <p class="hint">Yellow on top. Recognize the case by the side colors of the front and right faces. Click a case to load it.</p>
+      <div id="pll-gallery" class="gallery wide"></div>
+    </section>
+    <footer class="foot">Moves with a dashed border are a U turn to line up the case or a whole-cube turn back upright. Drag the 3D cube to look around.</footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="js/cube.js"></script>
+  <script src="js/oll.js"></script>
+  <script src="js/f2l.js"></script>
+  <script src="js/pll.js"></script>
+  <script src="js/viewer3d.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/case-trainer.js"></script>
+  <script src="js/oll-app.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

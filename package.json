@@ -1,0 +1,10 @@
+{
+  "name": "rubik-trainer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OLL lookup by picking yellow stickers, with a 3D solve animation",
+  "scripts": {
+    "test": "node test/oll.test.js && node test/f2l.test.js && node test/pll.test.js",
+    "start": "python3 -m http.server 8137"
+  }
+}
